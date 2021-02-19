@@ -5,3 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Seeding..."
+
+unless Campaign.exists?
+  Campaign.create(id: 4339, name: 'Ruby On Rails Assessment', spreadsheet_id: '1xkofJa5iI3AQE4yWEoHqMTQ1QQ-VDsfUDDwV96QQDVM')
+  puts "Created Campaign"
+end
