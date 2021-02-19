@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://my.talkpush.com/api/talkpush_services/campaigns/4339/campaign_invitations
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<INVALID-API-KEY>","campaign_invitation":{"first_name":null,"last_name":null,"email":null,"user_phone_number":null,"source":""}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Fri, 19 Feb 2021 12:08:49 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 8f364092-0e4e-403a-8b5c-ccef06d0bdda
+      X-Runtime:
+      - '0.014507'
+      Vary:
+      - Origin
+    body:
+      encoding: UTF-8
+      string: '{"message":"Invalid API key"}'
+  recorded_at: Fri, 19 Feb 2021 12:08:50 GMT
+recorded_with: VCR 6.0.0

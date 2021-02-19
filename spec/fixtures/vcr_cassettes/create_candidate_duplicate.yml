@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://my.talkpush.com/api/talkpush_services/campaigns/4339/campaign_invitations
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<API-KEY>","campaign_invitation":{"first_name":"John","last_name":"Doe","email":"j.doe@example.com","user_phone_number":"555555","source":""}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 19 Feb 2021 12:08:53 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"9cc71991f6a8f253cc3cde7f4f0d8df7"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - b3ac26b4-efb1-4556-a49e-8937b1b5eb4a
+      X-Runtime:
+      - '0.024305'
+      Vary:
+      - Origin
+    body:
+      encoding: ASCII-8BIT
+      string: '{"error":"Duplicate: Candidate already exists."}'
+  recorded_at: Fri, 19 Feb 2021 12:08:55 GMT
+recorded_with: VCR 6.0.0

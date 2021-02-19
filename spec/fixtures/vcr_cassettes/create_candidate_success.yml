@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://my.talkpush.com/api/talkpush_services/campaigns/4339/campaign_invitations
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<API-KEY>","campaign_invitation":{"first_name":"John","last_name":"Doe","email":"j.doe@example.com","user_phone_number":"555555","source":""}}'
+    headers:
+      Accept:
+      - application/json
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 19 Feb 2021 12:24:11 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Server:
+      - nginx
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Content-Type-Options:
+      - nosniff
+      X-Download-Options:
+      - noopen
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      Referrer-Policy:
+      - strict-origin-when-cross-origin
+      Etag:
+      - W/"a945fef4931a2be7244dbde072577b95"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 9343fcf2-dc81-4eeb-9f79-6dcacec866cf
+      X-Runtime:
+      - '2.602532'
+      Vary:
+      - Origin
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"Candidate was succesfully added to the campaign.","url":"https://my.talkpush.com/guests/campaign_invitations/949980/outbound_call?company_id=16\u0026outbound_token=f428b86a10d7542cd797badd04eeebe71f4a9dfce421432faf09a238c6902774\u0026source=MICROSITE","pin":"612820","id":949980}'
+  recorded_at: Fri, 19 Feb 2021 12:24:12 GMT
+recorded_with: VCR 6.0.0
