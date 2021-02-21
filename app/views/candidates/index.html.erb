@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<p id="alert"><%= alert %></p>
+
+<h1><%= @campaign.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Timestamp</th>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Email</th>
+      <th>Phone number</th>
+      <th>Response</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @candidates.each do |candidate| %>
+      <tr>
+        <td><%= candidate.timestamp.to_s(:db) %></td>
+        <td><%= candidate.first_name %></td>
+        <td><%= candidate.last_name %></td>
+        <td><%= candidate.email %></td>
+        <td><%= candidate.phone_number %></td>
+        <td><%= candidate.response_message %></td>
+        <td><%= candidate.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+  <tfoot>
+    <tr>
+      <td><%= button_to 'Import Candidates', import_candidates_path, method: :post %></td>
+      <td colspan="3">Last import was <%= @campaign.last_import_in_words %>.</td>
+      <td><%= @campaign.candidate_creations_count %> candidates </td>
+    </tr>
+  </tfoot>
+</table>
+
