@@ -54,4 +54,4 @@ Within your editor replace the API keys:
 
 ## Author
 
-[@RichOrElse](github.com/richorelse) <Ritchie Paul Buitre ritchie@richorelse.com>
+[@RichOrElse](github.com/richorelse) Ritchie Paul Buitre <ritchie@richorelse.com>

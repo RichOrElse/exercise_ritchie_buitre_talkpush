@@ -13,8 +13,7 @@ class ImportNewCandidatesJob < ApplicationJob
 
     if response.ok?
       details = response.fetch('values', []).map(&CandidateDetails).map(&:to_h)
-      campaign.import_candidates!(details)
-              .each { |creation| CreateCandidateJob.perform_later creation }
+      campaign.import_candidates!(details).each(&CreateCandidateJob)
     else
       campaign.import_candidates_failure! response.body
     end

@@ -7,4 +7,8 @@ class ApplicationJob < ActiveJob::Base
 
   delegate :credentials, to: :application
   delegate :application, :logger, to: Rails
+
+  def self.to_proc
+    method(:perform_later).to_proc
+  end
 end
