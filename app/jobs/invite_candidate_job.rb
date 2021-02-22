@@ -1,4 +1,4 @@
-class CreateCandidateJob < ApplicationJob
+class InviteCandidateJob < ApplicationJob
   queue_as :new_candidates
 
   include HTTParty

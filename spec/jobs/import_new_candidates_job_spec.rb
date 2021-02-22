@@ -12,7 +12,7 @@ RSpec.describe ImportNewCandidatesJob, type: :job do
 
     ['bad request', 'not found'].each do |error|
       specify error do
-        expect(CreateCandidateJob).to_not perform
+        expect(InviteCandidateJob).to_not perform
 
         VCR.use_cassette("import new candidates #{error}") do
           subject.perform(campaign)
@@ -24,7 +24,7 @@ RSpec.describe ImportNewCandidatesJob, type: :job do
     end
 
     it "imports no new candidates" do
-      expect(CreateCandidateJob).to_not perform
+      expect(InviteCandidateJob).to_not perform
 
       VCR.use_cassette("import_new_candidates_none") do
         expect { subject.perform(campaign) }.to_not change(campaign.candidate_creations, :count)
@@ -34,7 +34,7 @@ RSpec.describe ImportNewCandidatesJob, type: :job do
     end
 
     it "imports all new candidates" do
-      expect(CreateCandidateJob).to perform.at_least(:once)
+      expect(InviteCandidateJob).to perform.at_least(:once)
 
       VCR.use_cassette("import_new_candidates_all") do
         subject.perform(campaign)
@@ -45,7 +45,7 @@ RSpec.describe ImportNewCandidatesJob, type: :job do
     end
 
     it "imports last new candidates" do
-      expect(CreateCandidateJob).to perform.twice
+      expect(InviteCandidateJob).to perform.twice
 
       2.times { campaign.candidate_creations << CandidateCreation.new }
 

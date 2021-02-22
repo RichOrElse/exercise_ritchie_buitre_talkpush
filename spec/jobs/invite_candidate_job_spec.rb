@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CreateCandidateJob, type: :job do
+RSpec.describe InviteCandidateJob, type: :job do
   let!(:campaign) { Campaign.create(id: 4339, name: 'Default Campaign', spreadsheet_id: 'SPREADSHEET-ID') }
   let(:creation) { CandidateCreation.new(campaign: campaign) }
   let(:add_candidate) { change(campaign.candidate_creations, :count) }
