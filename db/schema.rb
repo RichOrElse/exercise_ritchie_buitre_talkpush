@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_19_134427) do
+ActiveRecord::Schema.define(version: 2021_02_22_054503) do
 
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_02_19_134427) do
     t.datetime "import_candidates_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "import_candidates_count", default: 0
     t.index ["name"], name: "index_campaigns_on_name"
     t.index ["spreadsheet_id"], name: "index_campaigns_on_spreadsheet_id", unique: true
   end

@@ -33,8 +33,10 @@
   <tfoot>
     <tr>
       <td><%= button_to 'Import Candidates', import_candidates_path, method: :post %></td>
-      <td colspan="3">Last import was <%= @campaign.last_import_in_words %>.</td>
-      <td><%= @campaign.candidate_creations_count %> candidates </td>
+      <td colspan="4">
+        Last import was <%= @campaign.last_import_in_words %> with <%= @campaign.import_candidates_count %> new candidate(s).
+      </td>
+      <td colspan="2"><%= @campaign.candidate_creations_count %> total candidates</td>
     </tr>
   </tfoot>
 </table>
